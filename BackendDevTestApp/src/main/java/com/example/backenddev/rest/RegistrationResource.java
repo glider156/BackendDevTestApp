@@ -65,20 +65,6 @@ public class RegistrationResource {
     }
 
     @GET
-    @Path("/allcod")
-    public Response getAllCodes()
-    {
-        return Response.ok(activationCodeService.getAll()).build();
-    }
-
-    @GET
-    @Path("/allpas")
-    public Response getAllPasswords()
-    {
-        return Response.ok(passwordService.getAll()).build();
-    }
-    
-    @GET
     @Path("/activate/{code}")
     public Response activate(@PathParam("code") final String code)
     {
