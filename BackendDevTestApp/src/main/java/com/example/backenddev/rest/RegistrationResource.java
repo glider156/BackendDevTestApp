@@ -49,8 +49,6 @@ public class RegistrationResource {
     private UserService userService;
     
     @Inject
-    private PasswordService passwordService;
-    @Inject
     private ActivationCodeService activationCodeService;
     
     
