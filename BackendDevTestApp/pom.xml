@@ -198,6 +198,7 @@
 		<dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-jpamodelgen</artifactId>
+   			<version>5.2.0.Final</version>
             <optional>true</optional>
         </dependency>
 		<dependency>
@@ -228,6 +229,43 @@
                 <artifactId>wildfly-maven-plugin</artifactId>
                 <version>${version.wildfly.maven.plugin}</version>
             </plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<compilerArgument>-proc:none</compilerArgument>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+    			<groupId>org.bsc.maven</groupId>
+    			<artifactId>maven-processor-plugin</artifactId>
+    			<version>2.0.5</version>
+    			<executions>
+        			<execution>
+            			<id>process</id>
+            			<goals>
+                			<goal>process</goal>
+            			</goals>
+            			<phase>generate-sources</phase>
+            			<configuration>
+                			<processors>
+                    			<processor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</processor>
+                			</processors>
+            			</configuration>
+        			</execution>
+    			</executions>
+    			<dependencies>
+        			<dependency>
+            			<groupId>org.hibernate</groupId>
+            			<artifactId>hibernate-jpamodelgen</artifactId>
+            			<version>5.2.0.Final</version>
+        			</dependency>
+    			</dependencies>
+			</plugin>			
+            
         </plugins>
     </build>
 
