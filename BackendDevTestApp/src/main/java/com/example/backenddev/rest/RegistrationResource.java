@@ -29,7 +29,6 @@ import com.example.backenddev.model.User;
 import com.example.backenddev.model.User_;
 import com.example.backenddev.rest.dto.UserDTO;
 import com.example.backenddev.service.ActivationCodeService;
-import com.example.backenddev.service.PasswordService;
 import com.example.backenddev.service.RegistrationService;
 import com.example.backenddev.service.UserService;
 
